@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="380" viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <title>Figure 10.2 – Bot Platform Comparison</title>
+  <rect width="800" height="380" fill="#f8f9fa" rx="8"/>
+  <text x="400" y="28" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Figure 10.2 – Bot Platform Comparison Matrix</text>
+
+  <!-- Table header -->
+  <rect x="20" y="44" width="760" height="40" rx="4" fill="#1B4F72"/>
+  <text x="130" y="70" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Platform</text>
+  <text x="280" y="70" text-anchor="middle" font-size="12" fill="white" font-weight="bold">NLU Built-in</text>
+  <text x="390" y="70" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Hosting</text>
+  <text x="500" y="70" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Code-free</text>
+  <text x="605" y="70" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Open Source</text>
+  <text x="715" y="70" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Cost</text>
+
+  <!-- Rows -->
+  <!-- Dialogflow CX -->
+  <rect x="20" y="84" width="760" height="46" fill="#EBF5FB"/>
+  <text x="130" y="112" text-anchor="middle" font-size="12" fill="#1a1a2e" font-weight="bold">Dialogflow CX</text>
+  <text x="280" y="106" text-anchor="middle" font-size="11" fill="#1a1a2e">✅ Google NLU</text>
+  <text x="280" y="122" text-anchor="middle" font-size="10" fill="#555">(ML + rule-based)</text>
+  <text x="390" y="112" text-anchor="middle" font-size="11" fill="#1a1a2e">Google Cloud</text>
+  <text x="500" y="112" text-anchor="middle" font-size="13" fill="#27AE60">✅ Yes</text>
+  <text x="605" y="112" text-anchor="middle" font-size="13" fill="#E74C3C">❌ No</text>
+  <text x="715" y="112" text-anchor="middle" font-size="11" fill="#1a1a2e">Pay-per-request</text>
+
+  <!-- Rasa Open Source -->
+  <rect x="20" y="130" width="760" height="46" fill="#FDFEFE"/>
+  <text x="130" y="158" text-anchor="middle" font-size="12" fill="#1a1a2e" font-weight="bold">Rasa Open Source</text>
+  <text x="280" y="152" text-anchor="middle" font-size="11" fill="#1a1a2e">✅ DIETClassifier</text>
+  <text x="280" y="168" text-anchor="middle" font-size="10" fill="#555">(transformer-based)</text>
+  <text x="390" y="158" text-anchor="middle" font-size="11" fill="#1a1a2e">Self-hosted</text>
+  <text x="500" y="158" text-anchor="middle" font-size="13" fill="#E74C3C">❌ No</text>
+  <text x="605" y="158" text-anchor="middle" font-size="13" fill="#27AE60">✅ Yes</text>
+  <text x="715" y="158" text-anchor="middle" font-size="11" fill="#1a1a2e">Free (infra cost)</text>
+
+  <!-- OpenAI / LLM API -->
+  <rect x="20" y="176" width="760" height="46" fill="#EBF5FB"/>
+  <text x="130" y="204" text-anchor="middle" font-size="12" fill="#1a1a2e" font-weight="bold">OpenAI / LLM API</text>
+  <text x="280" y="198" text-anchor="middle" font-size="11" fill="#1a1a2e">✅ In-context NLU</text>
+  <text x="280" y="214" text-anchor="middle" font-size="10" fill="#555">(GPT-4o etc.)</text>
+  <text x="390" y="204" text-anchor="middle" font-size="11" fill="#1a1a2e">OpenAI Cloud</text>
+  <text x="500" y="204" text-anchor="middle" font-size="13" fill="#F39C12">⚡ Partial</text>
+  <text x="605" y="204" text-anchor="middle" font-size="13" fill="#E74C3C">❌ No</text>
+  <text x="715" y="204" text-anchor="middle" font-size="11" fill="#1a1a2e">Token-based</text>
+
+  <!-- Microsoft Bot Framework -->
+  <rect x="20" y="222" width="760" height="46" fill="#FDFEFE"/>
+  <text x="130" y="250" text-anchor="middle" font-size="12" fill="#1a1a2e" font-weight="bold">MS Bot Framework</text>
+  <text x="280" y="244" text-anchor="middle" font-size="11" fill="#1a1a2e">✅ LUIS / CLU</text>
+  <text x="280" y="260" text-anchor="middle" font-size="10" fill="#555">(Azure Cognitive)</text>
+  <text x="390" y="250" text-anchor="middle" font-size="11" fill="#1a1a2e">Azure</text>
+  <text x="500" y="250" text-anchor="middle" font-size="13" fill="#F39C12">⚡ Partial</text>
+  <text x="605" y="250" text-anchor="middle" font-size="13" fill="#27AE60">✅ SDK only</text>
+  <text x="715" y="250" text-anchor="middle" font-size="11" fill="#1a1a2e">Pay-per-use</text>
+
+  <!-- Amazon Lex -->
+  <rect x="20" y="268" width="760" height="46" fill="#EBF5FB"/>
+  <text x="130" y="296" text-anchor="middle" font-size="12" fill="#1a1a2e" font-weight="bold">Amazon Lex v2</text>
+  <text x="280" y="290" text-anchor="middle" font-size="11" fill="#1a1a2e">✅ AWS NLU</text>
+  <text x="280" y="306" text-anchor="middle" font-size="10" fill="#555">(intents + slots)</text>
+  <text x="390" y="296" text-anchor="middle" font-size="11" fill="#1a1a2e">AWS</text>
+  <text x="500" y="296" text-anchor="middle" font-size="13" fill="#27AE60">✅ Yes</text>
+  <text x="605" y="296" text-anchor="middle" font-size="13" fill="#E74C3C">❌ No</text>
+  <text x="715" y="296" text-anchor="middle" font-size="11" fill="#1a1a2e">Pay-per-request</text>
+
+  <!-- Vertical dividers -->
+  <line x1="215" y1="44" x2="215" y2="314" stroke="#ccc" stroke-width="1"/>
+  <line x1="335" y1="44" x2="335" y2="314" stroke="#ccc" stroke-width="1"/>
+  <line x1="445" y1="44" x2="445" y2="314" stroke="#ccc" stroke-width="1"/>
+  <line x1="555" y1="44" x2="555" y2="314" stroke="#ccc" stroke-width="1"/>
+  <line x1="665" y1="44" x2="665" y2="314" stroke="#ccc" stroke-width="1"/>
+
+  <!-- Border -->
+  <rect x="20" y="44" width="760" height="270" rx="4" fill="none" stroke="#ccc" stroke-width="1.5"/>
+
+  <!-- Caption -->
+  <text x="400" y="350" text-anchor="middle" font-size="11" fill="#555">⚡ Partial = achievable with minimal code; ✅ = fully supported; ❌ = not applicable.</text>
+  <text x="400" y="368" text-anchor="middle" font-size="11" fill="#555">Cost models differ; verify current pricing with each provider.</text>
+</svg>

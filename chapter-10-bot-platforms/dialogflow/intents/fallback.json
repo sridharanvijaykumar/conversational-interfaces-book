@@ -1,0 +1,20 @@
+{
+  "name": "Default Fallback Intent",
+  "displayName": "Default Fallback Intent",
+  "priority": 500000,
+  "isFallback": true,
+  "action": "input.unknown",
+  "resetContexts": false,
+  "trainingPhrases": [],
+  "messages": [
+    {
+      "text": {
+        "text": [
+          "I didn't quite catch that. Could you rephrase? I can help with orders, returns, shipping, and payments.",
+          "I'm not sure I understand. Try asking about: order status, returns, shipping options, or payments.",
+          "Hmm, I didn't get that. You can also type 'agent' to speak with a human."
+        ]
+      }
+    }
+  ]
+}

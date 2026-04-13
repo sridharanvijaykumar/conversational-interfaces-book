@@ -1,0 +1,36 @@
+session_id,turn,timestamp,channel,user_input,detected_intent,confidence,bot_response,csat_score,completed,exit_intent
+sess_001,1,2026-03-01T09:02:11,web,hi there,greeting,0.97,"Hello! How can I help you today?",,False,
+sess_001,2,2026-03-01T09:02:25,web,where is my order ORD-1001,track_order,0.94,"Your order ORD-1001 is In Transit and expected by March 5.",,False,
+sess_001,3,2026-03-01T09:02:45,web,thanks bye,farewell,0.98,"Goodbye! Have a great day!",5,True,farewell
+sess_002,1,2026-03-01T09:15:03,mobile,hello,greeting,0.99,"Hello! How can I help you today?",,False,
+sess_002,2,2026-03-01T09:15:18,mobile,I want to return something,return_product,0.91,"Our return policy allows returns within 30 days of delivery.",,False,
+sess_002,3,2026-03-01T09:15:35,mobile,ok but I need a human,escalate,0.88,"Connecting you to a live agent. Wait time: ~3 mins.",3,True,escalate
+sess_003,1,2026-03-01T10:05:22,whatsapp,good morning,greeting,0.95,"Good morning! How can I assist you?",,False,
+sess_003,2,2026-03-01T10:05:44,whatsapp,how long does shipping take,shipping_info,0.93,"Standard shipping takes 3-5 business days; express is 1-2 days.",,False,
+sess_003,3,2026-03-01T10:06:02,whatsapp,do you deliver to Pune,shipping_info,0.87,"Yes, we deliver to Pune! Select your preferred option at checkout.",,False,
+sess_003,4,2026-03-01T10:06:21,whatsapp,great thanks,farewell,0.96,"You're welcome! Have a great day!",5,True,farewell
+sess_004,1,2026-03-01T11:00:05,voice,what payment methods do you accept,payment_info,0.89,"We accept credit/debit cards, UPI, net banking, and COD.",,False,
+sess_004,2,2026-03-01T11:00:22,voice,can I use gpay,payment_info,0.85,"Yes, Google Pay (GPay) via UPI is supported.",,False,
+sess_004,3,2026-03-01T11:00:38,voice,ok cool,out_of_scope,0.42,"I'm not sure I understood. Can you rephrase?",,False,
+sess_004,4,2026-03-01T11:00:55,voice,never mind bye,farewell,0.97,"Goodbye!",4,True,farewell
+sess_005,1,2026-03-01T11:30:14,web,I want to cancel order ORD-2002,cancel_order,0.91,"Order ORD-2002 can be cancelled within 12 hours of placement.",,False,
+sess_005,2,2026-03-01T11:30:31,web,yes please cancel it,cancel_order,0.88,"Cancellation request submitted. Refund in 5-7 business days.",4,True,cancel_order
+sess_006,1,2026-03-01T12:00:00,mobile,hey,greeting,0.98,"Hello! How can I help you?",,False,
+sess_006,2,2026-03-01T12:00:18,mobile,what are your offers,out_of_scope,0.38,"I'm not sure I understood that. Could you rephrase?",,False,
+sess_006,3,2026-03-01T12:00:35,mobile,discount coupons,payment_info,0.61,"Use code WELCOME10 for 10% off your first order!",,False,
+sess_006,4,2026-03-01T12:00:52,mobile,done,farewell,0.95,"Thank you for chatting!",5,True,farewell
+sess_007,1,2026-03-01T13:45:09,web,hi,greeting,0.99,"Hi there! How can I help?",,False,
+sess_007,2,2026-03-01T13:45:24,web,track ORD-3003,track_order,0.96,"Order ORD-3003 is currently Processing.",,False,
+sess_007,3,2026-03-01T13:45:41,web,when will it be shipped,track_order,0.79,"Processing orders typically ship within 24 hours.",,False,
+sess_007,4,2026-03-01T13:46:00,web,ok,out_of_scope,0.31,"Let me know if you have any other questions!",3,False,drop_off
+sess_008,1,2026-03-01T14:20:33,whatsapp,hello there,greeting,0.97,"Hello! How can I assist you?",,False,
+sess_008,2,2026-03-01T14:20:50,whatsapp,I got a damaged product,return_product,0.84,"I'm sorry about that. Please email photos to support@example.com.",,False,
+sess_008,3,2026-03-01T14:21:05,whatsapp,connect me to a human,escalate,0.93,"Connecting you to a live agent now.",2,True,escalate
+sess_009,1,2026-03-01T15:00:01,web,good afternoon,greeting,0.96,"Good afternoon! How can I help?",,False,
+sess_009,2,2026-03-01T15:00:19,web,return policy,return_product,0.92,"Items can be returned within 30 days in unused condition.",,False,
+sess_009,3,2026-03-01T15:00:38,web,how do I initiate a return,return_product,0.89,"Visit support.example.com/returns to start your return.",,False,
+sess_009,4,2026-03-01T15:00:55,web,thanks,farewell,0.98,"You're welcome! Take care.",5,True,farewell
+sess_010,1,2026-03-01T16:00:44,mobile,hi,greeting,0.98,"Hi! How can I help you today?",,False,
+sess_010,2,2026-03-01T16:01:02,mobile,warranty information,return_product,0.71,"Products carry a minimum 6-month warranty. Electronics: 1 year.",,False,
+sess_010,3,2026-03-01T16:01:20,mobile,my laptop has stopped working,return_product,0.65,"Please reach us at support@example.com with photos of the issue.",,False,
+sess_010,4,2026-03-01T16:01:38,mobile,ok will do bye,farewell,0.97,"Goodbye! Hope we resolve your issue quickly.",4,True,farewell

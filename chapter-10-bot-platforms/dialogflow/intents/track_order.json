@@ -1,0 +1,90 @@
+{
+  "name": "track_order",
+  "displayName": "track_order",
+  "priority": 500000,
+  "isFallback": false,
+  "action": "track.order",
+  "resetContexts": false,
+  "parameters": [
+    {
+      "id": "order_id",
+      "name": "order_id",
+      "required": true,
+      "dataType": "@order_id",
+      "value": "$order_id",
+      "displayName": "order_id",
+      "prompts": [
+        "What is your order ID? It looks like ORD-XXXX and can be found in your confirmation email.",
+        "Please share your order number (format: ORD-XXXX)."
+      ],
+      "isList": false
+    }
+  ],
+  "trainingPhrases": [
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {"text": "where is my order "},
+        {"text": "ORD-1001", "entityType": "@order_id", "alias": "order_id"}
+      ]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {"text": "track "},
+        {"text": "ORD-2002", "entityType": "@order_id", "alias": "order_id"}
+      ]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [{"text": "where is my order?"}]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [{"text": "what is the status of my package?"}]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [{"text": "has my order shipped?"}]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [{"text": "when will my parcel arrive?"}]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {"text": "I want to check on order number "},
+        {"text": "ORD-3003", "entityType": "@order_id", "alias": "order_id"}
+      ]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [{"text": "track my shipment"}]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [{"text": "delivery status please"}]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [{"text": "what happened to my order"}]
+    }
+  ],
+  "messages": [
+    {
+      "text": {
+        "text": [
+          "Let me check that order for you right away.",
+          "I'll look up your order status now."
+        ]
+      }
+    }
+  ],
+  "outputContexts": [
+    {
+      "name": "track_order_followup",
+      "lifespanCount": 3
+    }
+  ]
+}

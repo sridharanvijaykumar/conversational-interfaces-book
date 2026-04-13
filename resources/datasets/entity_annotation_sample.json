@@ -1,0 +1,88 @@
+{
+  "description": "Sample entity-annotated utterances for NER training (spaCy / Rasa format)",
+  "entity_types": ["order_id", "product_name", "location", "date", "quantity", "price"],
+  "annotations": [
+    {
+      "text": "I ordered the Wireless Earbuds Pro last Tuesday",
+      "entities": [
+        {"start": 14, "end": 34, "label": "product_name", "value": "Wireless Earbuds Pro"},
+        {"start": 40, "end": 47, "label": "date", "value": "last Tuesday"}
+      ]
+    },
+    {
+      "text": "Please cancel order ORD-4521 placed on March 10",
+      "entities": [
+        {"start": 21, "end": 29, "label": "order_id", "value": "ORD-4521"},
+        {"start": 40, "end": 48, "label": "date", "value": "March 10"}
+      ]
+    },
+    {
+      "text": "Deliver to my address in Bangalore by Friday",
+      "entities": [
+        {"start": 25, "end": 34, "label": "location", "value": "Bangalore"},
+        {"start": 38, "end": 44, "label": "date", "value": "Friday"}
+      ]
+    },
+    {
+      "text": "I want 3 units of the Smart Watch Series 5",
+      "entities": [
+        {"start": 7, "end": 8, "label": "quantity", "value": "3"},
+        {"start": 22, "end": 42, "label": "product_name", "value": "Smart Watch Series 5"}
+      ]
+    },
+    {
+      "text": "Show me products under ₹1500",
+      "entities": [
+        {"start": 22, "end": 28, "label": "price", "value": "₹1500"}
+      ]
+    },
+    {
+      "text": "Track shipment ORD-8830 to Chennai",
+      "entities": [
+        {"start": 15, "end": 23, "label": "order_id", "value": "ORD-8830"},
+        {"start": 27, "end": 34, "label": "location", "value": "Chennai"}
+      ]
+    },
+    {
+      "text": "I need 2 Yoga Mat Premium for my gym",
+      "entities": [
+        {"start": 7, "end": 8, "label": "quantity", "value": "2"},
+        {"start": 9, "end": 25, "label": "product_name", "value": "Yoga Mat Premium"}
+      ]
+    },
+    {
+      "text": "Return the Running Shoes Air Max I received yesterday",
+      "entities": [
+        {"start": 11, "end": 33, "label": "product_name", "value": "Running Shoes Air Max"},
+        {"start": 44, "end": 53, "label": "date", "value": "yesterday"}
+      ]
+    },
+    {
+      "text": "What is the price of Noise-Cancelling Headphones?",
+      "entities": [
+        {"start": 21, "end": 47, "label": "product_name", "value": "Noise-Cancelling Headphones"}
+      ]
+    },
+    {
+      "text": "I want express delivery to Mumbai by tomorrow",
+      "entities": [
+        {"start": 25, "end": 31, "label": "location", "value": "Mumbai"},
+        {"start": 35, "end": 43, "label": "date", "value": "tomorrow"}
+      ]
+    },
+    {
+      "text": "Order ORD-1100 was supposed to arrive by April 5th",
+      "entities": [
+        {"start": 6, "end": 14, "label": "order_id", "value": "ORD-1100"},
+        {"start": 41, "end": 50, "label": "date", "value": "April 5th"}
+      ]
+    },
+    {
+      "text": "Add 1 Laptop Stand Adjustable to my cart",
+      "entities": [
+        {"start": 4, "end": 5, "label": "quantity", "value": "1"},
+        {"start": 6, "end": 29, "label": "product_name", "value": "Laptop Stand Adjustable"}
+      ]
+    }
+  ]
+}

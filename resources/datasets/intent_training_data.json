@@ -1,0 +1,238 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "text": "hi there",
+        "intent": "greeting",
+        "entities": []
+      },
+      {
+        "text": "hello",
+        "intent": "greeting",
+        "entities": []
+      },
+      {
+        "text": "hey, how are you?",
+        "intent": "greeting",
+        "entities": []
+      },
+      {
+        "text": "good morning",
+        "intent": "greeting",
+        "entities": []
+      },
+      {
+        "text": "good afternoon",
+        "intent": "greeting",
+        "entities": []
+      },
+      {
+        "text": "howdy",
+        "intent": "greeting",
+        "entities": []
+      },
+      {
+        "text": "what's up",
+        "intent": "greeting",
+        "entities": []
+      },
+      {
+        "text": "greetings",
+        "intent": "greeting",
+        "entities": []
+      },
+      {
+        "text": "goodbye",
+        "intent": "farewell",
+        "entities": []
+      },
+      {
+        "text": "bye",
+        "intent": "farewell",
+        "entities": []
+      },
+      {
+        "text": "see you later",
+        "intent": "farewell",
+        "entities": []
+      },
+      {
+        "text": "that's all, thanks",
+        "intent": "farewell",
+        "entities": []
+      },
+      {
+        "text": "have a good day",
+        "intent": "farewell",
+        "entities": []
+      },
+      {
+        "text": "I'm done for now",
+        "intent": "farewell",
+        "entities": []
+      },
+      {
+        "text": "take care",
+        "intent": "farewell",
+        "entities": []
+      },
+      {
+        "text": "where is my order?",
+        "intent": "track_order",
+        "entities": []
+      },
+      {
+        "text": "track my order ORD-1234",
+        "intent": "track_order",
+        "entities": [{"start": 16, "end": 24, "value": "ORD-1234", "entity": "order_id"}]
+      },
+      {
+        "text": "what is the status of ORD-5678?",
+        "intent": "track_order",
+        "entities": [{"start": 22, "end": 30, "value": "ORD-5678", "entity": "order_id"}]
+      },
+      {
+        "text": "has my order been shipped?",
+        "intent": "track_order",
+        "entities": []
+      },
+      {
+        "text": "when will my package arrive?",
+        "intent": "track_order",
+        "entities": []
+      },
+      {
+        "text": "I want to return my product",
+        "intent": "return_product",
+        "entities": []
+      },
+      {
+        "text": "how do I send something back?",
+        "intent": "return_product",
+        "entities": []
+      },
+      {
+        "text": "I'd like a refund",
+        "intent": "return_product",
+        "entities": []
+      },
+      {
+        "text": "the item is defective, I want to exchange it",
+        "intent": "return_product",
+        "entities": []
+      },
+      {
+        "text": "return policy please",
+        "intent": "return_product",
+        "entities": []
+      },
+      {
+        "text": "how long does shipping take?",
+        "intent": "shipping_info",
+        "entities": []
+      },
+      {
+        "text": "what are the delivery options?",
+        "intent": "shipping_info",
+        "entities": []
+      },
+      {
+        "text": "do you offer express delivery?",
+        "intent": "shipping_info",
+        "entities": []
+      },
+      {
+        "text": "free shipping threshold",
+        "intent": "shipping_info",
+        "entities": []
+      },
+      {
+        "text": "can you deliver to Mumbai?",
+        "intent": "shipping_info",
+        "entities": [{"start": 20, "end": 26, "value": "Mumbai", "entity": "location"}]
+      },
+      {
+        "text": "I want to cancel my order",
+        "intent": "cancel_order",
+        "entities": []
+      },
+      {
+        "text": "please cancel ORD-9999",
+        "intent": "cancel_order",
+        "entities": [{"start": 14, "end": 22, "value": "ORD-9999", "entity": "order_id"}]
+      },
+      {
+        "text": "stop my order from being processed",
+        "intent": "cancel_order",
+        "entities": []
+      },
+      {
+        "text": "I no longer want this item",
+        "intent": "cancel_order",
+        "entities": []
+      },
+      {
+        "text": "what payment methods do you accept?",
+        "intent": "payment_info",
+        "entities": []
+      },
+      {
+        "text": "can I pay with UPI?",
+        "intent": "payment_info",
+        "entities": []
+      },
+      {
+        "text": "do you accept credit cards?",
+        "intent": "payment_info",
+        "entities": []
+      },
+      {
+        "text": "is cash on delivery available?",
+        "intent": "payment_info",
+        "entities": []
+      },
+      {
+        "text": "can I use my Paytm wallet?",
+        "intent": "payment_info",
+        "entities": []
+      },
+      {
+        "text": "I need help",
+        "intent": "escalate",
+        "entities": []
+      },
+      {
+        "text": "connect me to a human agent",
+        "intent": "escalate",
+        "entities": []
+      },
+      {
+        "text": "I want to speak to someone",
+        "intent": "escalate",
+        "entities": []
+      },
+      {
+        "text": "let me talk to a real person",
+        "intent": "escalate",
+        "entities": []
+      },
+      {
+        "text": "customer service representative please",
+        "intent": "escalate",
+        "entities": []
+      }
+    ],
+    "regex_features": [
+      {
+        "name": "order_id",
+        "pattern": "ORD[-\\s]?\\d{4}"
+      }
+    ],
+    "lookup_tables": [
+      {
+        "name": "location",
+        "elements": ["Mumbai", "Delhi", "Bangalore", "Chennai", "Kolkata", "Hyderabad", "Pune", "Ahmedabad"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "return_product",
+  "displayName": "return_product",
+  "priority": 500000,
+  "isFallback": false,
+  "action": "return.initiate",
+  "resetContexts": false,
+  "trainingPhrases": [
+    {"type": "EXAMPLE", "parts": [{"text": "I want to return my product"}]},
+    {"type": "EXAMPLE", "parts": [{"text": "how do I send something back?"}]},
+    {"type": "EXAMPLE", "parts": [{"text": "I'd like a refund"}]},
+    {"type": "EXAMPLE", "parts": [{"text": "I want to exchange this item"}]},
+    {"type": "EXAMPLE", "parts": [{"text": "return policy please"}]},
+    {"type": "EXAMPLE", "parts": [{"text": "how to return?"}]},
+    {"type": "EXAMPLE", "parts": [{"text": "can I get my money back?"}]},
+    {"type": "EXAMPLE", "parts": [{"text": "the item is defective"}]},
+    {"type": "EXAMPLE", "parts": [{"text": "I received a damaged product"}]},
+    {"type": "EXAMPLE", "parts": [{"text": "return request"}]},
+    {"type": "EXAMPLE", "parts": [{"text": "I don't want this anymore"}]},
+    {"type": "EXAMPLE", "parts": [{"text": "wrong item delivered, I want to return it"}]}
+  ],
+  "messages": [
+    {
+      "text": {
+        "text": [
+          "Our return policy allows returns within 30 days of delivery. Items must be in original, unused condition. To start a return, visit support.example.com/returns.",
+          "You can return items within 30 days. Refunds are processed in 5–7 business days. Shall I help you initiate the process?"
+        ]
+      }
+    }
+  ]
+}

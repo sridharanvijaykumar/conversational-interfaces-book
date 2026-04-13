@@ -1,0 +1,123 @@
+# Rasa Domain Configuration
+# Chapter 10: Bot Development Platforms
+# This file defines intents, entities, slots, responses, and actions
+
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - book_flight
+  - check_booking
+  - cancel_booking
+  - ask_help
+
+entities:
+  - destination
+  - origin
+  - date
+  - booking_id
+  - passenger_name
+
+slots:
+  destination:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: destination
+  
+  origin:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: origin
+  
+  travel_date:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: date
+  
+  booking_id:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: booking_id
+  
+  passenger_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: passenger_name
+
+responses:
+  utter_greet:
+    - text: "Hello! Welcome to SkyHigh Airlines. How can I help you today?"
+    - text: "Hi there! I'm your SkyHigh Airlines assistant. What can I do for you?"
+  
+  utter_goodbye:
+    - text: "Goodbye! Have a great day!"
+    - text: "Thank you for using SkyHigh Airlines. Safe travels!"
+  
+  utter_happy:
+    - text: "Great! I'm glad I could help."
+    - text: "Wonderful! Is there anything else I can assist you with?"
+  
+  utter_cheer_up:
+    - text: "I'm sorry to hear that. How can I make things better?"
+    - text: "I understand your frustration. Let me help you resolve this."
+  
+  utter_iamabot:
+    - text: "I am an AI assistant created to help you with flight bookings and inquiries."
+  
+  utter_ask_destination:
+    - text: "Where would you like to fly to?"
+    - text: "What's your destination?"
+  
+  utter_ask_origin:
+    - text: "Where will you be flying from?"
+    - text: "What's your departure city?"
+  
+  utter_ask_date:
+    - text: "When would you like to travel?"
+    - text: "What date are you planning to fly?"
+  
+  utter_confirm_booking:
+    - text: "Let me confirm: You want to fly from {origin} to {destination} on {travel_date}. Is that correct?"
+  
+  utter_booking_complete:
+    - text: "Great! Your booking has been confirmed. Your booking ID is {booking_id}."
+  
+  utter_ask_booking_id:
+    - text: "Could you please provide your booking ID?"
+    - text: "What's your booking reference number?"
+  
+  utter_help:
+    - text: "I can help you with:\n- Booking flights\n- Checking existing bookings\n- Canceling reservations\n- General flight information\n\nWhat would you like to do?"
+
+actions:
+  - action_book_flight
+  - action_check_booking
+  - action_cancel_booking
+  - validate_booking_form
+
+forms:
+  booking_form:
+    required_slots:
+      - origin
+      - destination
+      - travel_date
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

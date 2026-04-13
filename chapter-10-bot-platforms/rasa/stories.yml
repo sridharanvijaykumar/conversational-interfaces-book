@@ -1,0 +1,122 @@
+# Rasa Stories
+# Chapter 10: Bot Development Platforms
+# Conversation flows and dialogue patterns
+
+version: "3.1"
+
+stories:
+
+- story: happy path - greeting
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path - greeting
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+
+- story: say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- story: book flight - complete information
+  steps:
+  - intent: book_flight
+    entities:
+    - origin: "New York"
+    - destination: "London"
+    - date: "December 25"
+  - action: utter_confirm_booking
+  - intent: affirm
+  - action: action_book_flight
+  - action: utter_booking_complete
+
+- story: book flight - missing destination
+  steps:
+  - intent: book_flight
+    entities:
+    - origin: "New York"
+  - action: utter_ask_destination
+  - intent: inform
+    entities:
+    - destination: "London"
+  - action: utter_ask_date
+  - intent: inform
+    entities:
+    - date: "December 25"
+  - action: utter_confirm_booking
+  - intent: affirm
+  - action: action_book_flight
+  - action: utter_booking_complete
+
+- story: book flight - user denies confirmation
+  steps:
+  - intent: book_flight
+    entities:
+    - origin: "New York"
+    - destination: "London"
+    - date: "December 25"
+  - action: utter_confirm_booking
+  - intent: deny
+  - action: utter_ask_origin
+  - intent: inform
+    entities:
+    - origin: "Boston"
+  - action: utter_confirm_booking
+  - intent: affirm
+  - action: action_book_flight
+  - action: utter_booking_complete
+
+- story: check booking with ID
+  steps:
+  - intent: check_booking
+    entities:
+    - booking_id: "AB123456"
+  - action: action_check_booking
+
+- story: check booking without ID
+  steps:
+  - intent: check_booking
+  - action: utter_ask_booking_id
+  - intent: inform
+    entities:
+    - booking_id: "AB123456"
+  - action: action_check_booking
+
+- story: cancel booking
+  steps:
+  - intent: cancel_booking
+    entities:
+    - booking_id: "AB123456"
+  - action: action_cancel_booking
+  - action: utter_goodbye
+
+- story: ask for help
+  steps:
+  - intent: ask_help
+  - action: utter_help
+
+- story: interactive booking flow
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: book_flight
+  - action: booking_form
+  - active_loop: booking_form
+  - action: utter_confirm_booking
+  - intent: affirm
+  - action: action_book_flight
+  - action: utter_booking_complete
+  - intent: goodbye
+  - action: utter_goodbye

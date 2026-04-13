@@ -1,0 +1,41 @@
+{
+  "name": "product_name",
+  "displayName": "product_name",
+  "kind": "KIND_LIST",
+  "autoExpansionMode": "AUTO_EXPANSION_MODE_DEFAULT",
+  "enableFuzzyExtraction": true,
+  "entities": [
+    {
+      "value": "Wireless Earbuds Pro",
+      "synonyms": ["wireless earbuds", "earbuds pro", "earbuds", "P001"]
+    },
+    {
+      "value": "Running Shoes Air Max",
+      "synonyms": ["running shoes", "air max shoes", "sports shoes", "P002"]
+    },
+    {
+      "value": "Laptop Stand Adjustable",
+      "synonyms": ["laptop stand", "adjustable stand", "desk stand", "P003"]
+    },
+    {
+      "value": "Smart Watch Series 5",
+      "synonyms": ["smart watch", "smartwatch", "series 5 watch", "P004"]
+    },
+    {
+      "value": "Yoga Mat Premium",
+      "synonyms": ["yoga mat", "premium yoga mat", "exercise mat", "P005"]
+    },
+    {
+      "value": "Stainless Steel Bottle",
+      "synonyms": ["steel bottle", "water bottle", "stainless bottle", "P006"]
+    },
+    {
+      "value": "Mechanical Keyboard TKL",
+      "synonyms": ["mechanical keyboard", "TKL keyboard", "gaming keyboard", "P007"]
+    },
+    {
+      "value": "Noise-Cancelling Headphones",
+      "synonyms": ["noise cancelling headphones", "headphones", "ANC headphones", "P008"]
+    }
+  ]
+}

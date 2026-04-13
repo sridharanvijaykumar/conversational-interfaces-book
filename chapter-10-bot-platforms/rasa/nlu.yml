@@ -1,0 +1,170 @@
+# Rasa NLU Training Data
+# Chapter 10: Bot Development Platforms
+# Training examples for intent classification and entity extraction
+
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hey there
+    - greetings
+    - hi there
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+    - talk to you later
+    - have a nice day
+    - catch you later
+    - farewell
+    - take care
+
+- intent: affirm
+  examples: |
+    - yes
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - yes please
+    - absolutely
+    - sure
+    - right
+    - yeah
+
+- intent: deny
+  examples: |
+    - no
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - nope
+    - no thanks
+    - not interested
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - very good
+    - great
+    - amazing
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I'm good
+    - excellent
+
+- intent: mood_unhappy
+  examples: |
+    - sad
+    - very sad
+    - unhappy
+    - bad
+    - very bad
+    - awful
+    - terrible
+    - not very good
+    - extremely sad
+    - so sad
+    - frustrated
+    - disappointed
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - who are you?
+    - what are you?
+
+- intent: book_flight
+  examples: |
+    - I want to book a flight
+    - book a ticket
+    - I need to fly to [London](destination)
+    - book a flight from [New York](origin) to [Paris](destination)
+    - I want to travel to [Tokyo](destination) on [December 25](date)
+    - reserve a flight to [Berlin](destination)
+    - I need a ticket from [Boston](origin) to [Seattle](destination)
+    - book me a flight to [Dubai](destination) for [next Monday](date)
+    - I want to fly from [Chicago](origin) to [Miami](destination) on [January 15](date)
+    - schedule a flight to [Singapore](destination)
+    - I need to go to [Sydney](destination) from [Los Angeles](origin)
+    - book a trip to [Rome](destination) on [March 10](date)
+
+- intent: check_booking
+  examples: |
+    - check my booking
+    - what's my booking status
+    - I want to see my reservation
+    - show me my booking
+    - check booking [AB123456](booking_id)
+    - status of booking [XY789012](booking_id)
+    - where is my booking
+    - can you check my reservation
+    - I need to verify my booking
+    - look up booking [CD456789](booking_id)
+
+- intent: cancel_booking
+  examples: |
+    - cancel my booking
+    - I want to cancel
+    - cancel my reservation
+    - I need to cancel my flight
+    - cancel booking [AB123456](booking_id)
+    - I want to cancel booking [XY789012](booking_id)
+    - please cancel my trip
+    - remove my booking
+    - delete my reservation
+    - I need to cancel
+
+- intent: ask_help
+  examples: |
+    - help
+    - I need help
+    - can you help me
+    - what can you do
+    - how does this work
+    - support
+    - assist me
+    - I'm lost
+    - what are my options
+    - guide me
+
+- synonym: NYC
+  examples: |
+    - New York
+    - New York City
+    - Manhattan
+
+- synonym: LA
+  examples: |
+    - Los Angeles
+    - LA
+    - Los Angeles CA
+
+- synonym: SF
+  examples: |
+    - San Francisco
+    - SF
+    - San Fran
+
+- regex: booking_id
+  examples: |
+    - [A-Z]{2}\d{6}
+
+- regex: date
+  examples: |
+    - \d{1,2}[/-]\d{1,2}[/-]\d{2,4}

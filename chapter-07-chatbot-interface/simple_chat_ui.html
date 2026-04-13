@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chat Interface - Chapter 7 Example</title>
+    <link rel="stylesheet" href="chat_interface.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Chat Header -->
+        <div class="chat-header">
+            <div class="bot-avatar">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <circle cx="16" cy="16" r="16" fill="#4A90E2"/>
+                    <path d="M16 10C13.2386 10 11 12.2386 11 15V17C11 19.7614 13.2386 22 16 22C18.7614 22 21 19.7614 21 17V15C21 12.2386 18.7614 10 16 10Z" fill="white"/>
+                    <circle cx="13.5" cy="16" r="1.5" fill="#4A90E2"/>
+                    <circle cx="18.5" cy="16" r="1.5" fill="#4A90E2"/>
+                </svg>
+            </div>
+            <div class="bot-info">
+                <h3 class="bot-name">AI Assistant</h3>
+                <p class="bot-status">Online</p>
+            </div>
+            <button class="menu-button" onclick="toggleMenu()">⋮</button>
+        </div>
+
+        <!-- Chat Messages -->
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                <div class="message-avatar">🤖</div>
+                <div class="message-content">
+                    <p>Hello! I'm your AI assistant. How can I help you today?</p>
+                    <span class="message-time">10:30 AM</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Typing Indicator -->
+        <div class="typing-indicator" id="typingIndicator" style="display: none;">
+            <div class="message-avatar">🤖</div>
+            <div class="typing-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="chat-input-container">
+            <button class="attachment-button" onclick="handleAttachment()">📎</button>
+            <input 
+                type="text" 
+                id="messageInput" 
+                class="chat-input" 
+                placeholder="Type your message..."
+                onkeypress="handleKeyPress(event)"
+            />
+            <button class="emoji-button" onclick="toggleEmojiPicker()">😊</button>
+            <button class="send-button" onclick="sendMessage()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M22 2L11 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Quick Replies (Optional) -->
+        <div class="quick-replies" id="quickReplies">
+            <button class="quick-reply-btn" onclick="sendQuickReply('Tell me about your services')">
+                💼 Services
+            </button>
+            <button class="quick-reply-btn" onclick="sendQuickReply('What are your hours?')">
+                🕐 Hours
+            </button>
+            <button class="quick-reply-btn" onclick="sendQuickReply('Contact support')">
+                📞 Support
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Simulated bot responses for demonstration
+        const botResponses = {
+            'hello': 'Hi there! How can I assist you today?',
+            'hi': 'Hello! What can I help you with?',
+            'help': 'I can help you with various tasks. What do you need assistance with?',
+            'services': 'We offer customer support, booking assistance, and general information. What would you like to know more about?',
+            'hours': 'Our service is available 24/7. How can I help you?',
+            'support': 'I\'m here to help! Please describe your issue and I\'ll do my best to assist you.',
+            'bye': 'Goodbye! Have a great day!',
+            'thanks': 'You\'re welcome! Is there anything else I can help you with?',
+            'default': 'I understand. Could you please provide more details so I can assist you better?'
+        };
+
+        function getCurrentTime() {
+            const now = new Date();
+            return now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+            
+            if (message === '') return;
+            
+            // Add user message
+            addMessage(message, 'user');
+            input.value = '';
+            
+            // Show typing indicator
+            showTypingIndicator();
+            
+            // Simulate bot response delay
+            setTimeout(() => {
+                hideTypingIndicator();
+                const response = getBotResponse(message);
+                addMessage(response, 'bot');
+            }, 1000 + Math.random() * 1000);
+        }
+
+        function addMessage(text, sender) {
+            const messagesContainer = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            
+            const avatar = sender === 'bot' ? '🤖' : '👤';
+            
+            messageDiv.innerHTML = `
+                <div class="message-avatar">${avatar}</div>
+                <div class="message-content">
+                    <p>${text}</p>
+                    <span class="message-time">${getCurrentTime()}</span>
+                </div>
+            `;
+            
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function getBotResponse(userMessage) {
+            const message = userMessage.toLowerCase();
+            
+            for (const [key, response] of Object.entries(botResponses)) {
+                if (message.includes(key)) {
+                    return response;
+                }
+            }
+            
+            return botResponses.default;
+        }
+
+        function showTypingIndicator() {
+            const indicator = document.getElementById('typingIndicator');
+            indicator.style.display = 'flex';
+            const messagesContainer = document.getElementById('chatMessages');
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function hideTypingIndicator() {
+            const indicator = document.getElementById('typingIndicator');
+            indicator.style.display = 'none';
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        function sendQuickReply(message) {
+            document.getElementById('messageInput').value = message;
+            sendMessage();
+        }
+
+        function toggleMenu() {
+            alert('Menu options:\n- Clear conversation\n- Export chat\n- Settings\n- Help');
+        }
+
+        function handleAttachment() {
+            alert('Attachment feature would open file picker');
+        }
+
+        function toggleEmojiPicker() {
+            alert('Emoji picker would appear here');
+        }
+
+        // Auto-focus input on load
+        window.onload = function() {
+            document.getElementById('messageInput').focus();
+        };
+    </script>
+</body>
+</html>

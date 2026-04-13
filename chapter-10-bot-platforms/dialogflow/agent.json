@@ -1,0 +1,12 @@
+{
+  "displayName": "CustomerSupportAgent",
+  "defaultLanguageCode": "en",
+  "supportedLanguageCodes": ["en", "hi"],
+  "timeZone": "Asia/Kolkata",
+  "description": "Customer support chatbot demonstrating Dialogflow CX concepts from Chapter 10. Handles order tracking, returns, shipping, payments, and escalation.",
+  "enableStackdriverLogging": false,
+  "enableSpellCorrection": true,
+  "avatarUri": "",
+  "apiVersion": "GOOGLE_CLOUD_DIALOGFLOW_CX",
+  "tier": "TIER_STANDARD"
+}

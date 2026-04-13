@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="360" viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <title>Figure 14.1 – Conversation Analytics Funnel</title>
+  <rect width="800" height="360" fill="#f8f9fa" rx="8"/>
+  <text x="400" y="28" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Figure 14.1 – Conversation Analytics Funnel</text>
+
+  <!-- Funnel shapes (trapezoids) -->
+  <!-- Stage 1: Sessions Started -->
+  <polygon points="120,50 680,50 640,110 160,110" fill="#1B4F72" opacity="0.9"/>
+  <text x="400" y="85" text-anchor="middle" font-size="14" fill="white" font-weight="bold">Sessions Started</text>
+  <text x="400" y="103" text-anchor="middle" font-size="12" fill="#AED6F1">150  (100%)</text>
+
+  <!-- Stage 2: Engaged -->
+  <polygon points="160,115 640,115 600,175 200,175" fill="#1F618D" opacity="0.9"/>
+  <text x="400" y="150" text-anchor="middle" font-size="13" fill="white" font-weight="bold">Engaged  (> 1 turn)</text>
+  <text x="400" y="167" text-anchor="middle" font-size="12" fill="#AED6F1">138  (92%)</text>
+
+  <!-- Stage 3: Task Attempted -->
+  <polygon points="200,180 600,180 558,240 242,240" fill="#2471A3" opacity="0.9"/>
+  <text x="400" y="215" text-anchor="middle" font-size="13" fill="white" font-weight="bold">Task Attempted</text>
+  <text x="400" y="232" text-anchor="middle" font-size="12" fill="#AED6F1">103  (69%)</text>
+
+  <!-- Stage 4: Task Completed -->
+  <polygon points="242,245 558,245 510,305 290,305" fill="#117A65" opacity="0.95"/>
+  <text x="400" y="280" text-anchor="middle" font-size="13" fill="white" font-weight="bold">Task Completed</text>
+  <text x="400" y="297" text-anchor="middle" font-size="12" fill="#A9DFBF">102  (68%)</text>
+
+  <!-- Drop-off annotations on right -->
+  <text x="690" y="115" font-size="10" fill="#E74C3C">▶ 8% drop-off</text>
+  <text x="660" y="180" font-size="10" fill="#E74C3C">▶ 23% drop-off</text>
+  <text x="625" y="245" font-size="10" fill="#E74C3C">▶ 1% abandon</text>
+
+  <!-- Drop-off lines -->
+  <line x1="640" y1="110" x2="685" y2="112" stroke="#E74C3C" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="600" y1="175" x2="655" y2="178" stroke="#E74C3C" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="558" y1="240" x2="620" y2="242" stroke="#E74C3C" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- Metric cards below -->
+  <rect x="40" y="320" width="160" height="30" rx="6" fill="#2C3E50"/>
+  <text x="120" y="340" text-anchor="middle" font-size="11" fill="white">CSAT Avg: 3.82 / 5</text>
+
+  <rect x="220" y="320" width="160" height="30" rx="6" fill="#2C3E50"/>
+  <text x="300" y="340" text-anchor="middle" font-size="11" fill="white">Fallback Rate: 9.8%</text>
+
+  <rect x="400" y="320" width="180" height="30" rx="6" fill="#2C3E50"/>
+  <text x="490" y="340" text-anchor="middle" font-size="11" fill="white">Avg Turns/Conv: 6.3</text>
+
+  <rect x="600" y="320" width="165" height="30" rx="6" fill="#2C3E50"/>
+  <text x="682" y="340" text-anchor="middle" font-size="11" fill="white">Completion: 68%</text>
+</svg>

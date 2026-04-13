@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="420" viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <title>Figure 8.1 – Finite State Machine for Flight Booking</title>
+  <rect width="800" height="420" fill="#f8f9fa" rx="8"/>
+  <text x="400" y="26" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Figure 8.1 – Finite State Machine: Flight Booking Dialogue</text>
+
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <!-- GREETING -->
+  <ellipse cx="100" cy="90" rx="70" ry="32" fill="#1B4F72" stroke="#154360" stroke-width="1.5"/>
+  <text x="100" y="86" text-anchor="middle" font-size="12" fill="white" font-weight="bold">GREETING</text>
+  <text x="100" y="102" text-anchor="middle" font-size="10" fill="#AED6F1">Start</text>
+
+  <!-- COLLECT_ORIGIN -->
+  <ellipse cx="300" cy="90" rx="80" ry="32" fill="#1F618D" stroke="#154360" stroke-width="1.5"/>
+  <text x="300" y="86" text-anchor="middle" font-size="12" fill="white" font-weight="bold">COLLECT</text>
+  <text x="300" y="102" text-anchor="middle" font-size="12" fill="white" font-weight="bold">ORIGIN</text>
+
+  <!-- COLLECT_DEST -->
+  <ellipse cx="520" cy="90" rx="80" ry="32" fill="#2471A3" stroke="#154360" stroke-width="1.5"/>
+  <text x="520" y="86" text-anchor="middle" font-size="12" fill="white" font-weight="bold">COLLECT</text>
+  <text x="520" y="102" text-anchor="middle" font-size="12" fill="white" font-weight="bold">DEST</text>
+
+  <!-- COLLECT_DATE -->
+  <ellipse cx="700" cy="90" rx="80" ry="32" fill="#2980B9" stroke="#1A5276" stroke-width="1.5"/>
+  <text x="700" y="86" text-anchor="middle" font-size="12" fill="white" font-weight="bold">COLLECT</text>
+  <text x="700" y="102" text-anchor="middle" font-size="12" fill="white" font-weight="bold">DATE</text>
+
+  <!-- CONFIRM_BOOKING -->
+  <ellipse cx="520" cy="230" rx="90" ry="32" fill="#117A65" stroke="#0E6655" stroke-width="1.5"/>
+  <text x="520" y="226" text-anchor="middle" font-size="12" fill="white" font-weight="bold">CONFIRM</text>
+  <text x="520" y="242" text-anchor="middle" font-size="12" fill="white" font-weight="bold">BOOKING</text>
+
+  <!-- BOOKING_DONE -->
+  <ellipse cx="300" cy="230" rx="80" ry="32" fill="#1E8449" stroke="#196F3D" stroke-width="2"/>
+  <text x="300" y="226" text-anchor="middle" font-size="12" fill="white" font-weight="bold">BOOKING</text>
+  <text x="300" y="242" text-anchor="middle" font-size="12" fill="white" font-weight="bold">DONE ✓</text>
+
+  <!-- HANDLE_CANCEL -->
+  <ellipse cx="100" cy="230" rx="80" ry="32" fill="#922B21" stroke="#7B241C" stroke-width="1.5"/>
+  <text x="100" y="226" text-anchor="middle" font-size="12" fill="white" font-weight="bold">HANDLE</text>
+  <text x="100" y="242" text-anchor="middle" font-size="12" fill="white" font-weight="bold">CANCEL</text>
+
+  <!-- FALLBACK -->
+  <ellipse cx="700" cy="230" rx="75" ry="32" fill="#7D6608" stroke="#6E5E08" stroke-width="1.5"/>
+  <text x="700" y="226" text-anchor="middle" font-size="12" fill="white" font-weight="bold">FALLBACK</text>
+  <text x="700" y="242" text-anchor="middle" font-size="10" fill="#F9E79F">low confidence</text>
+
+  <!-- END -->
+  <ellipse cx="200" cy="360" rx="60" ry="28" fill="#424949" stroke="#2C3E50" stroke-width="2"/>
+  <text x="200" y="364" text-anchor="middle" font-size="12" fill="white" font-weight="bold">END</text>
+
+  <!-- Arrows row 1 -->
+  <line x1="170" y1="90" x2="218" y2="90" stroke="#444" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="194" y="82" text-anchor="middle" font-size="9" fill="#444">book intent</text>
+
+  <line x1="380" y1="90" x2="438" y2="90" stroke="#444" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="409" y="82" text-anchor="middle" font-size="9" fill="#444">origin given</text>
+
+  <line x1="600" y1="90" x2="618" y2="90" stroke="#444" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="609" y="82" text-anchor="middle" font-size="9" fill="#444">dest given</text>
+
+  <!-- COLLECT_DATE → CONFIRM_BOOKING -->
+  <path d="M 700 122 Q 700 175 620 230" fill="none" stroke="#444" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="685" y="178" text-anchor="middle" font-size="9" fill="#444">date given</text>
+
+  <!-- CONFIRM → BOOKING_DONE -->
+  <line x1="428" y1="230" x2="382" y2="230" stroke="#444" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="405" y="222" text-anchor="middle" font-size="9" fill="#444">confirmed</text>
+
+  <!-- CONFIRM → HANDLE_CANCEL -->
+  <line x1="430" y1="240" x2="182" y2="240" stroke="#444" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="306" y="255" text-anchor="middle" font-size="9" fill="#444">cancel</text>
+
+  <!-- any state → FALLBACK -->
+  <path d="M 700 58 Q 755 40 755 200 Q 755 230 777 230" fill="none" stroke="#7D6608" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr)"/>
+  <text x="770" y="155" text-anchor="start" font-size="9" fill="#7D6608">no match</text>
+
+  <!-- FALLBACK → back (loop) -->
+  <path d="M 625 230 Q 660 195 640 122" fill="none" stroke="#7D6608" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr)"/>
+  <text x="668" y="185" text-anchor="middle" font-size="9" fill="#7D6608">retry</text>
+
+  <!-- BOOKING_DONE → END -->
+  <line x1="270" y1="255" x2="220" y2="333" stroke="#444" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="230" y="300" text-anchor="middle" font-size="9" fill="#444">done</text>
+
+  <!-- HANDLE_CANCEL → END -->
+  <line x1="130" y1="257" x2="170" y2="334" stroke="#922B21" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="140" y="305" text-anchor="middle" font-size="9" fill="#922B21">cancelled</text>
+
+  <!-- Caption -->
+  <text x="400" y="408" text-anchor="middle" font-size="11" fill="#555">States shown as ellipses; transitions labelled with triggering conditions. Dashed lines = fallback paths.</text>
+</svg>
